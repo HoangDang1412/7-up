@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF8" />
+        <title>Title</title>
+        <script
+            src="https://unpkg.com/js-image-zoom@0.4.1/js-image-zoom.js"
+            type="application/javascript"
+        ></script>
+    </head>
+    <style>
+        HTML,
+        BODY {
+            height: 100%;
+        }
+        BODY {
+            background: #082330;
+            background-size: 0.12em 100%;
+            font: 16em/1 Arial;
+        }
+        .text--line {
+            font-size: 0.2em;
+        }
+        .text--line2 {
+            font-size: 0.3em;
+        }
+        svg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        .text-copy {
+            fill: none;
+            stroke: white;
+            stroke-dasharray: 40% 50%;
+            stroke-width: 3px;
+            animation: stroke-offset 3s infinite linear;
+        }
+        .text-copy:nth-child(1) {
+            stroke: #360745;
+            stroke-dashoffset: 7%;
+        }
+        .text-copy:nth-child(2) {
+            stroke: #d61c59;
+            stroke-dashoffset: 10%;
+        }
+        .text-copy:nth-child(3) {
+            stroke: #e7d84b;
+            stroke-dashoffset: 14%;
+        }
+        .text-copy:nth-child(4) {
+            stroke: #efeac5;
+            stroke-dashoffset: 20%;
+        }
+        .text-copy:nth-child(5) {
+            stroke: #1b8798;
+            stroke-dashoffset: 24%;
+        }
+        @keyframes stroke-offset {
+            100% {
+                stroke-dashoffset: 100%;
+                stroke-dasharray: 100% 87.5%;
+            }
+        }
+    </style>
+    <body>
+        <svg viewBox="0 0 800 600">
+            <symbol id="s-text">
+                <text text-anchor="middle" x="50%" y="35%" class="text--line">
+                    Rước ngay 7UP
+                </text>
+                <text text-anchor="middle" x="50%" y="68%" class="text--line2">
+                    Tết này vận LÊN
+                </text>
+            </symbol>
+
+            <g class="g-ants">
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+            </g>
+        </svg>
+    </body>
+</html>
